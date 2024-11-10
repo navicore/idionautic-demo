@@ -1,0 +1,17 @@
+[package]
+name = "idionautic-demo"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Ed Sweeney <ed@onextent.com>"]
+description = "A Demo App for Idionautic"
+repository = "https://github.com/navicore/idionautic-demo"
+
+[dependencies]
+axum = "0.6"
+askama = "0.11"
+tokio = { version = "1", features = ["full"] }
+tower = "0.4"  # Optional for middleware, like logging
+tower-http = { version = "0.3", features = ["fs"] }  # Add "fs" feature
+serde = { version = "1.0", features = ["derive"] } # For serializing data if needed
+
