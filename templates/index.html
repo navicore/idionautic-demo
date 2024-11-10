@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idionautic Demo App</title>
+    <title>Idionautic Demo</title>
 </head>
 <body>
-    <h1>Welcome to Idionautic Demo App</h1>
-    <div id="app"></div>
-
-    <!-- Load App bundle -->
+    <!-- Load application JavaScript as usual -->
     <script src="/static/app.js"></script>
 
-    <!-- Load Agent bundle -->
-    <script src="/static/agent.js"></script>
+    <!-- Load the agent without affecting app code -->
+    <script type="module">
+        import init from '/static/agent/idionautic_agent.js';
+        init().then(() => {
+            console.log("Idionautic agent initialized");
+        });
+    </script>
 </body>
 </html>
